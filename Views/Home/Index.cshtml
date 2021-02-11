@@ -1,0 +1,35 @@
+﻿@model IEnumerable<RestauEntityFWDbAssign.Models.RestTable>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Restaurant List</h2>
+
+<br/>
+<a href="/Home/Create" class="btn btn-outline-secondary">Add Restaurant</a>
+<br/>
+<form class="form-inline" action="/home/index">
+    <label for="search">Search</label>
+    <input type="text" class="form-control" id="search" name="search" placeholder="search" value="@ViewBag.Search"/>
+    <button type="submit" class="btn btn-primary">Go</button>
+</form>
+<br/>
+<table class="table">
+    <tr>
+        
+        <th>Restaurant Name </th>
+        <th>Cusine</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>     
+            @*<td><a href="/Home/Details/@item.RestId">@item.RestName</a></td>*@
+            <td>@item.RestName</td>
+            <td>@item.Cusine</td>
+            <td><a href="/Home/Details/@item.RestId">Details</a></td>
+            <td><a href="/Home/Edit/@item.RestId" class="btn btn-primary">Edit</a></td>
+            <td><a href="/Home/Delete/@item.RestId" class="btn btn-danger">Delete</a></td>
+        </tr>
+    }
+</table>

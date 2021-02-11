@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Add New Restaurant</h2>
+
+<form action="/Home/Create" method="post">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="RestaurantName">Restaurant Name</label>
+            <input type="text" name="RestName" class="form-control" id="RestaurantName" placeholder="RestauranName.." />
+        </div>
+
+        @*<div class="form-group col-md-6">
+            <label for="CusineType">Cusine Type</label>
+            <input type="text" name="Cusine" class="form-control" id="Cusine" placeholder="CusineType.." />
+        </div>*@
+
+        <div class="form-group col-md-6">
+            <label for="Cusine">Cusine Type</label>
+            @*<input type="text" name="Cusine" class="form-control" id="Cusine" placeholder="Cusine Type.." />*@
+            <select class="form-control" id="Cusine" name="Cusine">
+                <option value="">Select Cusine Type</option>
+                
+                <option value="Indian">Indian</option>
+                <option value="Italian">Italian</option>
+                <option value="French">French</option>
+                <option value="None">None</option>
+            
+            </select>
+        </div>
+
+    </div>
+
+    <button type="submit" class="btn btn-success">Add Restaurant</button>
+    <a class="btn btn-dark" href="/Home/Index">Cancel</a>
+</form>

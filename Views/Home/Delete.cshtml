@@ -1,0 +1,27 @@
+﻿@model RestauEntityFWDbAssign.Models.RestTable
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete Restaurant</h2>
+
+<form action="/Home/Delete/@Model.RestId" method="post">
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="RestaurantName">Restaurant Name</label>
+            <input type="hidden" name="RestId" value="@Model.RestId" />
+            @Model.RestName
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="Cusine">Cusine Type</label>
+            @Model.Cusine
+        </div>
+
+    </div>
+
+    <button type="submit" class="btn btn-danger">Delete Restaurant</button>
+    <a class="btn btn-dark" href="/Home/Index">Cancel</a>
+</form>
+

@@ -1,0 +1,26 @@
+﻿@model RestauEntityFWDbAssign.Models.RestTable
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details of Restaurant</h2>
+
+<table class="table">
+    <tr>
+        <th>Restaurant Id</th>
+        <td>@Model.RestId</td>
+    </tr>
+
+    <tr>
+        <th>Restaurant Name</th>
+        <td>@Model.RestName</td>
+    </tr>
+
+    <tr>
+        <th>Cusine</th>
+        <td>@Model.Cusine</td>
+    </tr>
+
+</table>
+
+<a href="/Home/Index" class="btn btn-info">Back</a>
